@@ -93,7 +93,7 @@ RUN set +x \
   && rm -rf /var/cache/apt \
   && rm -rf /var/lib/apt/lists/
 
-RUN cd /var && rm -fr www && git clone https://github.com/pixelfed/pixelfed.git www && cd www && git checkout ${BRANCH}
+RUN cd /var && rm -fr www && git clone https://github.com/pixelfed-glitch/pixelfed.git www && cd www && git checkout ${BRANCH}
 COPY nginx.conf start.nginx.sh /var/www/contrib/docker/
 
 # Use the default production configuration
