@@ -25,7 +25,6 @@ jobs:
       matrix:
         branch:
           - develop
-          - staging
           - main
         webserver:
           - nginx
