@@ -1,15 +1,14 @@
-# Pixelfed Docker Images
+# Pixelfed Glitch Docker Images
 
-Forked from the [in-repo Dockerfiles](https://github.com/pixelfed/pixelfed/tree/dev/contrib/docker) primarily because I wanted nginx as the web daemon and something to publish to use in a Helm chart.
+Forked from the [in-repo Dockerfiles](https://github.com/pixelfed-glitch/pixelfed/tree/dev/contrib/docker) primarily because I wanted nginx as the web daemon and something to publish to use in a Helm chart.
 
 Tags are rebuilt daily so you should use the SHA hash if mutability concerns you.
 
-Images at ghcr.io/mattlqx/docker-pixelfed
+Images at docker.io/jessebot/pixelfed-glitch
 
 Available tags:
 - dev-nginx
-- v0.12.4-nginx
 
-## Maintainer
+## Attribution
 
-Matt Kulka <matt@lqx.net>
+This repo is a fork of the a repo managed by Matt Kulka <matt@lqx.net>, so that we can use pixelfed-glitch. Check out their chart upstream if you want to use vanilla pixelfed, as it's great! :)
