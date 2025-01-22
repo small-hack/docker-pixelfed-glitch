@@ -24,8 +24,9 @@ jobs:
     strategy:
       matrix:
         branch:
-          - dev
+          - develop
           - staging
+          - main
         webserver:
           - nginx
 
