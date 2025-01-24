@@ -9,9 +9,14 @@ on:
   schedule:
     - cron: "45 5 * * *"
   push:
-    branches: ["main"]
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
 
 env:
   # Use docker.io for Docker Hub if empty
