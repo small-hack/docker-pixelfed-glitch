@@ -20,12 +20,37 @@ env:
   IMAGE_NAME: jessebot/pixelfed-glitch
 
 jobs:
+  get-tags:
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.pixelfed-glitch-release.outputs.release }}
+      
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
+    steps:
+      # this just gets the latest pixelfed-glitch release
+      - id: pixelfed-glitch-release
+        name: Get latest pixelfed-glitch/pixelfed release
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          owner: pixelfed-glitch
+          repo: pixelfed
+          excludes: prerelease, draft
+
   build:
+    needs: get-tags
     strategy:
       matrix:
         branch:
           - develop
           - main
+          - ${{needs.get-tags.outputs.output1}}
         webserver:
           - nginx
 
